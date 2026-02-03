@@ -1,0 +1,398 @@
+@charset "utf-8";
+
+/* ==============================
+  共通
+============================== */
+* {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f5f3f0;
+  color: #5a5754;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans",
+    "Noto Sans JP", "Helvetica Neue", Arial, sans-serif;
+}
+
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+/* ==============================
+  header
+============================== */
+.header .inner {
+  text-align: center;
+  padding: 48px 0 64px;
+}
+
+.site-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.header .logo {
+  width: 24px;
+}
+
+.header .site-en {
+  font-size: 14px;
+  color: #9d9a97;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.header .title {
+  margin-top: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.header .title .catch {
+  display: block;
+  font-size: 0.9em;
+}
+
+.header .text {
+  margin-top: 16px;
+  font-size: 16px;
+  color: #9d9a97;
+}
+
+/* ==============================
+  layout
+============================== */
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==============================
+  coordinate scene
+============================== */
+.coordinate-scene .section-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.scene-nav {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+/* ==============================
+  button
+============================== */
+.btn {
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 16px;
+  background-color: #d4b5b0;
+  color: #fff;
+  border-radius: 16px;
+  transition: opacity 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+/* ==============================
+  scene list（3カラム）
+============================== */
+.scene-list {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* ==============================
+  coordinate card
+============================== */
+.coordinate-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ==============================
+  coordinate image（基準）
+============================== */
+.coordinate-image {
+  position: relative; /* ← 重要 */
+  height: 600px; /* ← 指定どおり */
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+
+.coordinate-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+/* ホバーアニメーション */
+.coordinate-card:hover .coordinate-image img {
+  transform: scale(1.08);
+  filter: brightness(0.9);
+}
+
+/* ==============================
+  category label（完全レスポンシブ）
+============================== */
+.coordinate-category {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+
+  padding: 6px 12px;
+  font-size: 12px;
+  line-height: 1;
+
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  border-radius: 12px;
+  backdrop-filter: blur(2px);
+  z-index: 2;
+}
+
+/* ==============================
+  favorite / save icons
+============================== */
+.coordinate-card .icon-favorite,
+.coordinate-card .icon-save {
+  position: absolute;
+  top: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  color: #9d9a97;
+  z-index: 3;
+}
+
+.coordinate-card .icon-favorite {
+  right: 56px;
+}
+
+.coordinate-card .icon-save {
+  right: 12px;
+}
+
+/* ==============================
+  coordinate description
+============================== */
+.coordinate-description {
+  padding: 24px;
+}
+
+.coordinate-title {
+  font-size: 16px;
+}
+
+.coordinate-tags {
+  margin: 12px 0;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.coordinate-tag {
+  font-size: 12px;
+  padding: 4px 10px;
+  background-color: #e5e1dc;
+  border-radius: 12px;
+}
+
+.item-title {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #9d9a97;
+  font-weight: normal;
+}
+
+.item-list {
+  margin-top: 4px;
+}
+
+.item-list li {
+  position: relative;
+  padding-left: 1em;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.item-list li::before {
+  content: "・";
+  position: absolute;
+  left: 0;
+  color: #d4b5b0;
+}
+
+/* ==============================
+  footer
+============================== */
+.footer {
+  margin-top: 64px;
+  padding: 48px 120px 32px;
+  background-color: #fff;
+  font-size: 14px;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 32px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-logo img {
+  width: 16px;
+}
+
+.footer-title {
+  font-size: 14px;
+  letter-spacing: 0.1em;
+}
+
+.footer-description {
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #7a7774;
+}
+
+.footer-copy {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #9d9a97;
+}
+
+.footer-heading {
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.footer-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-nav a {
+  font-size: 13px;
+  color: #7a7774;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid #e5e1dc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-copyright {
+  font-size: 12px;
+  color: #9d9a97;
+}
+
+.footer-sns {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-sns a {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #f5f3f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #9d9a97;
+}
+
+/* ==============================
+  responsive
+============================== */
+@media (max-width: 768px) {
+  .scene-list {
+    grid-template-columns: 1fr;
+  }
+
+  .coordinate-image {
+    height: 600px;
+  }
+
+  .footer {
+    padding: 40px 20px 24px;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-logo {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .footer-sns {
+    justify-content: center;
+  }
+}
