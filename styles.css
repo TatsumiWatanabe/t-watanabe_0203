@@ -46,7 +46,9 @@ li {
 ============================== */
 .header .inner {
   text-align: center;
-  padding: 48px 0 64px;
+  padding: 48px 20px 64px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .site-title {
