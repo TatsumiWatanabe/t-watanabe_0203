@@ -152,8 +152,8 @@ li {
   coordinate image（基準）
 ============================== */
 .coordinate-image {
-  position: relative; /* ← 重要 */
-  height: 600px; /* ← 指定どおり */
+  position: relative;
+  height: 600px;
   overflow: hidden;
   border-radius: 12px 12px 0 0;
 }
@@ -175,7 +175,7 @@ li {
 }
 
 /* ==============================
-  category label（完全レスポンシブ）
+  category label
 ============================== */
 .coordinate-category {
   position: absolute;
@@ -373,7 +373,7 @@ li {
   }
 
   .coordinate-image {
-    height: 600px;
+    height: 400px;
   }
 
   .footer {
